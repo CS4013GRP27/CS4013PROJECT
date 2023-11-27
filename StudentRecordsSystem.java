@@ -10,7 +10,7 @@ public class StudentRecordsSystem {
 
 
         // Creating Courses
-        Program program1 = new Program("P1001", "Bachelor of Science in Physics", "Physics Dept", "Undergraduate", 4);
+        Program program1 = new Program("LM121", "Bachelor of Science in Computer Science", "Engineering Dept", "Undergraduate", 4);
         program1.addModule(module1);
         program1.addModule(module2);
         program1.addModule(module3);
@@ -18,7 +18,7 @@ public class StudentRecordsSystem {
         program1.addModule(module5);
 
 
-        Program program2 = new Program("P2001", "Bachelor of Science in Chemistry", "Chemistry Dept", "Undergraduate", 4);
+        Program program2 = new Program("LM121", "Bachelor of Science in Computer Science", "Engineering Dept", "Undergraduate", 4);
         program2.addModule(module1);
         program2.addModule(module2);
         program2.addModule(module3);
@@ -27,9 +27,12 @@ public class StudentRecordsSystem {
 
 
         // Creating a department
-        Department physicsDept = new Department("Physics Department");
-        physicsDept.addProgram(program1);
-        physicsDept.addProgram(program2);
+        Department engineeringDept = new Department("Engineering Department");
+        engineeringDept.addProgram(program1);
+        engineeringDept.addProgram(program2);
+        engineeringDept.addProgram(program3);
+
+
 
         // Creating students
         Student student1 = new Student(1001, "Billy Leenane", "123@gmail.com", "123 Town street", program1);
@@ -48,7 +51,7 @@ public class StudentRecordsSystem {
         student2.addModuleGrade(module1, "B1");
 
 
-        Student student2 = new Student(1222, "Eoghan O'Donovan", "Eoghan@gmail.com", "1223 United St", program2);
+        Student student3 = new Student(1222, "Eoghan O'Donovan", "Eoghan@gmail.com", "1223 United St", program3);
         student3.addModuleGrade(module1, "A1");
         student3.addModuleGrade(module3, "B1");
         student3.addModuleGrade(module1, "C2");
