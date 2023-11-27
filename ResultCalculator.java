@@ -19,25 +19,28 @@ public class ResultCalculator {
         return grade.equals("F") || grade.equals("NG");
     }
 
-    public boolean needsToRepeatYear(List<String> grades) {
-        double qca = calculateQCA(grades);
-
-        if (qca < 2.0) {
-            boolean hasD1 = grades.contains("D1");
-            boolean hasD2 = grades.contains("D2");
-
-            if (hasD1 && hasD2) {
-                return false; 
-            } else {
-                return true; 
+    public boolean needsToRepeatSemester(List<ModuleGrade> moduleGrades) {//The minimum standards for progression are as follows:
+        double qca = calculateQcaOneSemester(moduleGrades);		  //QCA greater than or equal to 2.00
+        								  //No deficient grades (i.e., F, N, NG, I)
+        if (qca >= 2.0) {
+            for (ModuleGrade moduleGrade : moduleGrades) {
+                if (moduleGrade.getGrade().equals("F") ||
+                    moduleGrade.getGrade().equals("N") ||
+                    moduleGrade.getGrade().equals("NG") ||
+                    moduleGrade.getGrade().equals("I")) {
+                    return false; // Deficient grade found, cannot progress
+                }
+                if (moduleGrade.getGrade().equals("D1") || moduleGrade.getGrade().equals("D2")) {
+                    return true; // "D1" or "D2" grade found, can progress with sufficient QCA
+                }
             }
-        }
-
-        return false; 
+            return true; // Fits requirements
+	}
+        return false; // QCA less than 2.00, cannot progress
     }
 
-    public boolean passesYear(List<String> grades) {
-        double qca = calculateQCA(grades);
+    public boolean passesSemesster(List<String> grades) {
+        double qca = calculateQcaOneSemester(grades);
         return qca > 2.0; 
     }
 
