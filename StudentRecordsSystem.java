@@ -9,7 +9,7 @@ public class StudentRecordsSystem {
         Module module5 = new Module("C145", "Biology", 4);
 
 
-        // Creating programs
+        // Creating Courses
         Program program1 = new Program("P1001", "Bachelor of Science in Physics", "Physics Dept", "Undergraduate", 4);
         program1.addModule(module1);
         program1.addModule(module2);
