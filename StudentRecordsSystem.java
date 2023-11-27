@@ -48,10 +48,20 @@ public class StudentRecordsSystem {
         student2.addModuleGrade(module1, "B1");
 
 
+        Student student2 = new Student(1222, "Eoghan O'Donovan", "Eoghan@gmail.com", "1223 United St", program2);
+        student3.addModuleGrade(module1, "A1");
+        student3.addModuleGrade(module3, "B1");
+        student3.addModuleGrade(module1, "C2");
+        student3.addModuleGrade(module1, "A1");
+        student3.addModuleGrade(module1, "B2");
+
+
+
         // Creating student records
         StudentRecords studentRecords = new StudentRecords();
         studentRecords.addStudent(student1);
         studentRecords.addStudent(student2);
+        studentRecords.addStudent(student3);
 
         // Example operations
         System.out.println("Students in Physics Department:");
