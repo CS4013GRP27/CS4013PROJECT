@@ -44,6 +44,32 @@ public class ResultCalculator {
         return qca > 2.0; 
     }
 
+    public double calculateResidualQca(List<ModuleGrade> moduleGrades) {
+        double totalResidualGradePoints = 0.0;
+        int totalCredits = 0;
+
+        for (ModuleGrade moduleGrade : moduleGrades) {
+            if (moduleGrade.getGrade().equals("F") ||
+                moduleGrade.getGrade().equals("N") ||
+                moduleGrade.getGrade().equals("NG") ||
+                moduleGrade.getGrade().equals("D1") ||
+                moduleGrade.getGrade().equals("D2")) {
+                
+                totalResidualGradePoints += convertGradeToQPV("C3") * moduleGrade.getCreditValue();
+                totalCredits += moduleGrade.getCreditValue();
+            } else {
+                totalResidualGradePoints += convertGradeToQPV(moduleGrade.getGrade()) * moduleGrade.getCreditValue();
+                totalCredits += moduleGrade.getCreditValue();
+            }
+        }
+
+        if (totalCredits == 0) {
+            return 0.0; // Avoid division by zero
+        }
+
+        return totalResidualGradePoints / totalCredits;
+    }
+	
     private double convertGradeToPoint(String grade) {
         switch (grade) {
             case "A1": return 4.0;
@@ -58,6 +84,7 @@ public class ResultCalculator {
             case "D2": return 1.2;
             case "F": return 0;
             case "NG": return 0;
+	    case "N": return 0;
             default: return 0;
         }
     }
