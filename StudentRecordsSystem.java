@@ -70,6 +70,6 @@ public class StudentRecordsSystem {
             System.out.println(student.getName());
         }
 
-        System.out.println("\nOverall Average GPA: " + studentRecords.calculateOverallAverageGPA());
+        System.out.println("\nOverall Average QCA: " + studentRecords.calculateOverallAverageQCA());
     }
 }
