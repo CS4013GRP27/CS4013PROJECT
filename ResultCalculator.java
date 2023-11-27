@@ -2,14 +2,17 @@ import java.util.List;
 
 public class ResultCalculator {
 
-    public double calculateQCA(List<String> grades) {
+	//Using Qca formula of Sum of(QPV multiplied by Module Credits) all over Total number of module credits for semester
+    public double calculateQcaOneSemester(List<ModuleGrade> moduleGrades) {
         double totalGradePoints = 0.0;
+        int totalCredits = 0;
 
-        for (String grade : grades) {
-            totalGradePoints += convertGradeToPoint(grade);
+        for (ModuleGrade moduleGrade : moduleGrades) {
+            totalGradePoints += convertGradeToQPV(moduleGrade.getGrade()) * moduleGrade.getCreditValue();
+            totalCredits += moduleGrade.getCreditValue();
         }
 
-        return totalGradePoints / grades.size();
+        return totalGradePoints / totalCredits;
     }
 
     public boolean needsToRepeatModule(String grade) {
