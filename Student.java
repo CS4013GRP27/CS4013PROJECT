@@ -9,7 +9,7 @@ public class Student {
    private String address;
    private Program program;
    private List<ModuleGrade> modules;
-   private double gpa;
+   private double qca;
 
 
    public Student(int studentId, String name, String email, String address, Program program) {
@@ -136,8 +136,8 @@ public class Student {
    }
 
 
-   public double getGpa() {
-       return gpa;
+   public double getQca() {
+       return qca;
    }
 
 
