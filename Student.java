@@ -141,7 +141,7 @@ public class Student {
    }
 
 
-   public void setGpa(double gpa) {
-       this.gpa = gpa;
+   public void setQca(double Qca) {
+       this.qca = qca;
    }
 }
