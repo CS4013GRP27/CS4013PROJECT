@@ -15,6 +15,30 @@ public class ResultCalculator {
         return totalGradePoints / totalCredits;
     }
 
+	 public double calculateQcaAllSemesters(List<List<ModuleGrade>> allSemesterGrades) {
+        double totalGradePoints = 0.0;
+        int totalCredits = 0;
+
+        for (List<ModuleGrade> semesterGrades : allSemesterGrades) {
+            double semesterGradePoints = 0.0;
+            int semesterCredits = 0;
+
+            for (ModuleGrade moduleGrade : semesterGrades) {
+                semesterGradePoints += convertGradeToQPV(moduleGrade.getGrade()) * moduleGrade.getCreditValue();
+                semesterCredits += moduleGrade.getCreditValue();
+            }
+
+            totalGradePoints += semesterGradePoints;
+            totalCredits += semesterCredits;
+        }
+
+        if (totalCredits == 0) {
+            return 0.0; // Avoid division by zero
+        }
+
+        return totalGradePoints / totalCredits;
+    }
+	
     public boolean needsToRepeatModule(String grade) {
         return grade.equals("F") || grade.equals("NG");
     }
