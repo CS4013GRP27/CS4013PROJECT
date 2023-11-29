@@ -3,25 +3,25 @@ import java.util.List;
 
 
 public class Program {
-   private String programCode;
+   private String courseCode;
    private String name;
    private String department;
    private String level;
    private int duration;
    private List<ModuleGrade> modulesOffered;
-   private ProgramType programType;
-   private String programFormat;
+   private ProgramType courseType;
+   private String courseFormat;
 
 
-   public Program(String programCode, String name, String department, String level, int duration,
+   public Program(String courseCode, String name, String department, String level, int duration,
        ProgramType programType, String programFormat) {
-       this.programCode = programCode;
+       this.courseCodeCode = courseCode;
        this.name = name;
        this.department = department;
        this.level = level;
        this.duration = duration;
-       this.programType = programType;
-       this.programFormat = programFormat;
+       this.courseType = courseType;
+       this.courseFormat = courseFormat;
        this.modulesOffered = new ArrayList<>();
    }
 
@@ -41,8 +41,8 @@ public class Program {
    }
 
 
-   public void setProgramCode(String programCode) {
-       this.programCode = programCode;
+   public void setProgramCode(String courseCode) {
+       this.courseCode = programCode;
    }
 
 
@@ -96,22 +96,22 @@ public class Program {
    }
 
 
-   public ProgramType getProgramType() {
+   public CourseType getProgramType() {
        return programType;
    }
 
 
-   public void setProgramType(ProgramType programType) {
+   public void setCourseType(CourseType courseType) {
        this.programType = programType;
    }
 
 
-   public String getProgramFormat() {
+   public String getCourseFormat() {
        return programFormat;
    }
 
 
-   public void setProgramFormat(String programFormat) {
+   public void setCourseFormat(String courseFormat) {
        this.programFormat = programFormat;
    }
 
@@ -119,20 +119,20 @@ public class Program {
    @Override
    public String toString() {
        return "Program{" +
-               "programCode='" + programCode + '\'' +
+               "programCode='" + courseCode + '\'' +
                ", name='" + name + '\'' +
                ", department='" + department + '\'' +
                ", level='" + level + '\'' +
                ", duration=" + duration +
-               ", programType=" + programType +
-               ", programFormat='" + programFormat + '\'' +
+               ", programType=" + courseType +
+               ", programFormat='" + courseFormat + '\'' +
                ", modulesOffered=" + modulesOffered +
                '}';
    }
 }
 
 
-enum ProgramType {
+enum CourseType {
    UNDERGRADUATE,
    POSTGRADUATE
 }
