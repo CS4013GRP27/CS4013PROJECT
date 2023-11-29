@@ -23,5 +23,4 @@ public class Transcript {
         moduleGrades.put(module, grade);
     }
 
-    // other methods like finalizeGrades() etc
 }
