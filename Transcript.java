@@ -1,40 +1,27 @@
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Transcript {
+
     private Student student;
-    private List<ModuleGrade> moduleGrades;
+    private Map<Module, String> moduleGrades;
 
     public Transcript(Student student) {
         this.student = student;
-        this.moduleGrades = new ArrayList<>();
+        this.moduleGrades = new HashMap<>();
     }
 
-    public void addModuleGrade(Module module, String grade) {
-        ModuleGrade moduleGrade = new ModuleGrade(module, grade);
-        moduleGrades.add(moduleGrade);
+    public void generateTranscript() {
+        // logic to generate transcript
     }
 
     public void printTranscript() {
-        System.out.println("Transcript for " + student.getName() + ":");
-        for (ModuleGrade moduleGrade : moduleGrades) {
-            System.out.println(moduleGrade.getModule().getName() + ": " + moduleGrade.getGrade());
-        }
+        // print transcript details
     }
 
-    public Student getStudent() {
-        return student;
+    public void updateModuleGrade(Module module, String grade) {
+        moduleGrades.put(module, grade);
     }
 
-    public void setStudent(Student student) {
-        this.student = student;
-    }
-
-    public List<ModuleGrade> getModuleGrades() {
-        return moduleGrades;
-    }
-
-    public void setModuleGrades(List<ModuleGrade> moduleGrades) {
-        this.moduleGrades = moduleGrades;
-    }
+    // other methods like finalizeGrades() etc
 }
