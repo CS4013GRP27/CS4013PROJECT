@@ -25,11 +25,11 @@ public class ModuleGrade {
         this.creditValue = creditValue;
     }
 
-    public Module getModule() {
-        return module;
+    public Module getModuleCode() {
+        return moduleCode;
     }
 
-    public void setModule(Module module) {
-        this.module = module;
+    public void setModule(String moduleCode) {
+        this.moduleCode = moduleCode;
     }
 }
