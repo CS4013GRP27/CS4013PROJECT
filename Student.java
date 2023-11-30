@@ -6,15 +6,15 @@ public class Student {
     private String name;
     private String email;
     private String address;
-    private Program program;
+    private Course course;
     private List<ModuleGrade> modules;
 
-    public Student(int studentId, String name, String email, String address, Program program) {
+    public Student(int studentId, String name, String email, String address, Course course) {
         this.studentId = studentId;
         this.name = name;
         this.email = email;
         this.address = address;
-        this.program = program;
+        this.course = course;
         this.modules = new ArrayList<>();
     }
 
@@ -22,53 +22,6 @@ public class Student {
         this.modules.add(new ModuleGrade(module.getModuleCode(), grade, module.getCredits()));
     }
 
-    public double calculateQCA() {
-        double totalCredits = 0.0;
-        double totalGradePoints = 0.0;
-
-        for (ModuleGrade moduleGrade : modules) {
-            int credits = moduleGrade.getCreditValue();
-            totalCredits += credits;
-            totalGradePoints += convertGradeToPoint(moduleGrade.getGrade()) * credits;
-        }
-
-        if (totalCredits == 0) {
-            return 0.0; // Avoid division by zero
-        }
-
-        return totalGradePoints / totalCredits;
-    }
-
-    private double convertGradeToPoint(String grade) {
-        switch (grade) {
-            case "A1":
-                return 4.0;
-            case "A2":
-                return 3.6;
-            case "B1":
-                return 3.2;
-            case "B2":
-                return 3.0;
-            case "B3":
-                return 2.8;
-            case "C1":
-                return 2.6;
-            case "C2":
-                return 2.4;
-            case "C3":
-                return 2.0;
-            case "D1":
-                return 1.6;
-            case "D2":
-                return 1.2;
-            case "F":
-            case "NG":
-            case "N":
-                return 0.0;
-            default:
-                return 0.0;
-        }
-    }
 
     public Transcript viewOwnTranscript() {
         Transcript studentTranscript = new Transcript(this);
@@ -114,12 +67,12 @@ public class Student {
         this.address = address;
     }
 
-    public Program getProgram() {
-        return program;
+    public Course getCourse() {
+        return course;
     }
 
-    public void setProgram(Program program) {
-        this.program = program;
+    public void setCourse(Program course) {
+        this.course = course;
     }
 
     public List<ModuleGrade> getModules() {
