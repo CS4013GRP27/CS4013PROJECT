@@ -11,7 +11,7 @@ public class Course {
     private ProgramType courseType;
     private String courseFormat;
 
-    public Program(String courseCode, String name, String department, String level, int duration,
+    public Course(String courseCode, String name, String department, String level, int duration,
                    ProgramType programType, String programFormat) {
         this.courseCode = courseCode;
         this.name = name;
