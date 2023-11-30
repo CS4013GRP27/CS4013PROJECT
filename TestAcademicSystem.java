@@ -9,8 +9,8 @@ public class TestAcademicSystem {
 
     private AcademicSystem academicSystem;
     private Department engineeringDept;
-    private Program program1;
-    private Program program2;
+    private Course course1;
+    private Course course2;
     private Module module1;
     private Module module2;
     private Module module3;
@@ -28,26 +28,26 @@ public class TestAcademicSystem {
         module4 = new Module("C123", "Irish", 4);
         module5 = new Module("C145", "Biology", 4);
 
-        program1 = new Program("LM121", "Bachelor of Science in Computer Science", "Engineering Dept", "Undergraduate", 4);
-        program1.addModule(module1);
-        program1.addModule(module2);
-        program1.addModule(module3);
-        program1.addModule(module4);
-        program1.addModule(module5);
+        course1 = new Course("LM121", "Bachelor of Science in Computer Science", "Engineering Dept", "Undergraduate", 4);
+        course1.addModule(module1);
+        course1.addModule(module2);
+        course1.addModule(module3);
+        course1.addModule(module4);
+        course1.addModule(module5);
 
-        program2 = new Program("LM122", "Bachelor of Arts in History", "Humanities Dept", "Undergraduate", 4);
-        program2.addModule(module1);
-        program2.addModule(module2);
-        program2.addModule(module3);
-        program2.addModule(module4);
-        program2.addModule(module5);
+        course2 = new Course("LM122", "Bachelor of Arts in History", "Humanities Dept", "Undergraduate", 4);
+        course2.addModule(module1);
+        course2.addModule(module2);
+        course2.addModule(module3);
+        course2.addModule(module4);
+        course2.addModule(module5);
 
         // Create Department
         engineeringDept = new Department("Engineering Department");
-        engineeringDept.addProgram(program1);
-        engineeringDept.addProgram(program2);
+        engineeringDept.addProgram(course1);
+        engineeringDept.addProgram(course2);
 
-        student1 = new Student(1001, "Billy Leenane", "123@gmail.com", "123 Town street", program1);
+        student1 = new Student(1001, "Billy Leenane", "123@gmail.com", "123 Town street", course1);
         student1.addModuleGrade(module1, "A1");
         student1.addModuleGrade(module2, "B2");
         student1.addModuleGrade(module3, "C3");
