@@ -1,16 +1,15 @@
-
 public class ModuleGrade {
-String grade;
-int creditValue;
-String moduleCode;
+    private String grade;
+    private int creditValue;
+    private Module module;
 
-	public ModuleGrade(String moduleCode, String grade, int creditValue) {
-	this.grade = grade;
-	this.creditValue = creditValue;
-	this.moduleCode= moduleCode;
-	}
-	
-	public String getGrade() {
+    public ModuleGrade(Module module, String grade, int creditValue) {
+        this.module = module;
+        this.grade = grade;
+        this.creditValue = creditValue;
+    }
+
+    public String getGrade() {
         return grade;
     }
 
@@ -25,11 +24,12 @@ String moduleCode;
     public void setCreditValue(int creditValue) {
         this.creditValue = creditValue;
     }
-	public String getModuleCode() {
-		return moduleCode;
-	}
-	
-	public void setModuleCode(String moduleCode) {
-		this.moduleCode = moduleCode;
-	}
+
+    public Module getModule() {
+        return module;
+    }
+
+    public void setModule(Module module) {
+        this.module = module;
+    }
 }

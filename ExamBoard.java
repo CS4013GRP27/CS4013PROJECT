@@ -18,30 +18,11 @@ public class ExamBoard {
 
     public void reviewStudentProgression() {
         List<Student> students = department.identifyStudentsNotMeetingStandards();
-        for (Student student : students) {
-        }
         reviewedStudents.addAll(students);
     }
 
     public void submitGrades(List<ModuleGrade> grades) {
         submittedGrades.addAll(grades);
-    }
-
-
-    public List<Student> getReviewedStudents() {
-        return reviewedStudents;
-    }
-
-    public void setReviewedStudents(List<Student> reviewedStudents) {
-        this.reviewedStudents = reviewedStudents;
-    }
-
-    public List<ModuleGrade> getSubmittedGrades() {
-        return submittedGrades;
-    }
-
-    public void setSubmittedGrades(List<ModuleGrade> submittedGrades) {
-        this.submittedGrades = submittedGrades;
     }
 
     public int getBoardId() {
@@ -66,5 +47,21 @@ public class ExamBoard {
 
     public void setSemester(String semester) {
         this.semester = semester;
+    }
+
+    public List<Student> getReviewedStudents() {
+        return reviewedStudents;
+    }
+
+    public void setReviewedStudents(List<Student> reviewedStudents) {
+        this.reviewedStudents = reviewedStudents;
+    }
+
+    public List<ModuleGrade> getSubmittedGrades() {
+        return submittedGrades;
+    }
+
+    public void setSubmittedGrades(List<ModuleGrade> submittedGrades) {
+        this.submittedGrades = submittedGrades;
     }
 }
