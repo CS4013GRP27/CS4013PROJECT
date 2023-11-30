@@ -9,19 +9,19 @@ public class StudentRecordsSystem {
         Module module5 = new Module("C145", "Biology", 4);
 
         // Create Programs
-        Program program1 = new Program("LM121", "Bachelor of Science in Computer Science", "Engineering Dept", "Undergraduate", 4);
-        program1.addModule(module1);
-        program1.addModule(module2);
-        program1.addModule(module3);
-        program1.addModule(module4);
-        program1.addModule(module5);
+        Course course1 = new Course("LM121", "Bachelor of Science in Computer Science", "Engineering Dept", "Undergraduate", 4);
+        course1.addModule(module1);
+        course1.addModule(module2);
+        course1.addModule(module3);
+        course1.addModule(module4);
+        course1.addModule(module5);
 
-        Program program2 = new Program("LM122", "Bachelor of Arts in History", "Humanities Dept", "Undergraduate", 4);
-        program2.addModule(module1);
-        program2.addModule(module2);
-        program2.addModule(module3);
-        program2.addModule(module4);
-        program2.addModule(module5);
+        Course course2 = new Course("LM122", "Bachelor of Arts in History", "Humanities Dept", "Undergraduate", 4);
+        course2.addModule(module1);
+        course2.addModule(module2);
+        course2.addModule(module3);
+        course2.addModule(module4);
+        course2.addModule(module5);
 
         // Create Department
         Department engineeringDept = new Department("Engineering Department");
