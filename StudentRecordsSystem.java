@@ -25,25 +25,25 @@ public class StudentRecordsSystem {
 
         // Create Department
         Department engineeringDept = new Department("Engineering Department");
-        engineeringDept.addProgram(program1);
-        engineeringDept.addProgram(program2);
+        engineeringDept.addCourse(course1);
+        engineeringDept.addCourse(course2);
 
         // Create Students
-        Student student1 = new Student(1001, "Billy Leenane", "123@gmail.com", "123 Town street", program1);
+        Student student1 = new Student(1001, "Billy Leenane", "123@gmail.com", "123 Town street", course1);
         student1.addModuleGrade(module1, "A1");
         student1.addModuleGrade(module2, "B2");
         student1.addModuleGrade(module3, "C3");
         student1.addModuleGrade(module4, "B3");
         student1.addModuleGrade(module5, "B2");
 
-        Student student2 = new Student(1002, "Ainsley Alabi", "Ainsley@gmail.com", "123 City St", program2);
+        Student student2 = new Student(1002, "Ainsley Alabi", "Ainsley@gmail.com", "123 City St", course2);
         student2.addModuleGrade(module1, "A2");
         student2.addModuleGrade(module2, "B2");
         student2.addModuleGrade(module3, "C1");
         student2.addModuleGrade(module4, "A1");
         student2.addModuleGrade(module5, "B1");
 
-        Student student3 = new Student(1003, "Eoghan O'Donovan", "Eoghan@gmail.com", "1223 United St", program1);
+        Student student3 = new Student(1003, "Eoghan O'Donovan", "Eoghan@gmail.com", "1223 United St", course1);
         student3.addModuleGrade(module1, "A1");
         student3.addModuleGrade(module2, "B2");
         student3.addModuleGrade(module3, "C3");
@@ -59,7 +59,7 @@ public class StudentRecordsSystem {
 
         // Example operations
         System.out.println("Students in Physics Department:");
-        List<Student> physicsStudents = academicSystem.getStudentsByProgram(program1);
+        List<Student> physicsStudents = academicSystem.getStudentsByProgram(course1);
         for (Student student : physicsStudents) {
             System.out.println(student.getName());
         }
