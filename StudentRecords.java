@@ -46,7 +46,7 @@ public class StudentRecords {
     public double calculateOverallAverageGPA() {
         double totalGpa = 0.0;
         for (Student student : studentList) {
-            totalGpa += student.getGpa();
+            totalGpa += student.calculateQCA();
         }
         return totalGpa / studentList.size();
     }

@@ -1,10 +1,10 @@
+import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Map;
 import java.util.List;
-
+import java.util.Map;
 
 public class TranscriptManager {
-    private Map<Integer, Transcript> transcriptMap;
+    private Map<Student, Transcript> transcriptMap;
 
     public TranscriptManager() {
         this.transcriptMap = new HashMap<>();
@@ -12,49 +12,39 @@ public class TranscriptManager {
 
     public void generateTranscript(Student student) {
         Transcript transcript = new Transcript(student);
+        transcriptMap.put(student, transcript);
         transcript.generateTranscript();
-        transcriptMap.put(student.getStudentId(), transcript);
     }
 
-    public Transcript getTranscript(int studentId) {
-        return transcriptMap.get(studentId);
-    }
-
-    public void printTranscript(int studentId) {
-        Transcript transcript = transcriptMap.get(studentId);
+    public void printTranscript(Student student) {
+        Transcript transcript = transcriptMap.get(student);
         if (transcript != null) {
+            System.out.println("Printing Transcript for Student: " + student.getName());
             transcript.printTranscript();
         } else {
-            System.out.println("Transcript not found for student with ID: " + studentId);
+            System.out.println("Transcript not found for the student.");
         }
     }
 
-    public void updateTranscript(Student student, Module module, String grade) {
-        Transcript transcript = transcriptMap.get(student.getStudentId());
+    public void updateModuleGrade(Student student, Module module, String grade) {
+        Transcript transcript = transcriptMap.get(student);
         if (transcript != null) {
             transcript.updateModuleGrade(module, grade);
         } else {
-            System.out.println("Transcript not found for student with ID: " + student.getStudentId());
+            System.out.println("Transcript not found for the student. Unable to update grade.");
         }
     }
 
-    public Transcript viewOwnTranscript(Student student) {
-        return transcriptMap.get(student.getStudentId());
+    public List<Transcript> getAllTranscripts() {
+        return new ArrayList<>(transcriptMap.values());
     }
 
-    public Transcript provideTranscriptToFaculty(int studentId) {
-        return transcriptMap.get(studentId);
+
+    public Map<Student, Transcript> getTranscriptMap() {
+        return transcriptMap;
     }
 
-    public void submitResultsForModules(Faculty faculty, List<ModuleGrade> moduleGrades) {
-        for (ModuleGrade moduleGrade : moduleGrades) {
-        }
-    }
-
-    public void holdExamBoard(Department department, List<Student> students) {
-        for (Student student : students) {
-        }
+    public void setTranscriptMap(Map<Student, Transcript> transcriptMap) {
+        this.transcriptMap = transcriptMap;
     }
 }
-
-
