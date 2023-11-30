@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class C {
+public class Course {
     private String courseCode;
     private String name;
     private String department;
