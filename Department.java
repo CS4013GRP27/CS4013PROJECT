@@ -3,23 +3,23 @@ import java.util.List;
 
 public class Department {
     private String name;
-    private List<Program> programs;
+    private List<Course> courses;
     private List<Faculty> facultyList;
     private List<ExamBoard> examBoards;
 
     public Department(String name) {
         this.name = name;
-        this.programs = new ArrayList<>();
+        this.courses = new ArrayList<>();
         this.facultyList = new ArrayList<>();
         this.examBoards = new ArrayList<>();
     }
 
-    public void addProgram(Program program) {
-        this.programs.add(program);
+    public void addCourse(Course course) {
+        this.courses.add(course);
     }
 
-    public void removeProgram(Program program) {
-        this.programs.remove(program);
+    public void removeCourse(Course course) {
+        this.courses.remove(course);
     }
 
     public void addFaculty(Faculty faculty) {
@@ -49,12 +49,12 @@ public class Department {
         this.name = name;
     }
 
-    public List<Program> getPrograms() {
-        return programs;
+    public List<Course> getCourses() {
+        return courses;
     }
 
-    public void setPrograms(List<Program> programs) {
-        this.programs = programs;
+    public void setCourses(List<Course> programs) {
+        this.courses = programs;
     }
 
     public List<Faculty> getFacultyList() {
