@@ -25,10 +25,10 @@ public class StudentRecords {
         return null;
     }
 
-    public List<Student> getStudentsByProgram(Program program) {
+    public List<Student> getStudentsByCourse(Course course) {
         List<Student> studentsByProgram = new ArrayList<>();
         for (Student student : studentList) {
-            if (student.getProgram().equals(program)) {
+            if (student.getCourse().equals(course)) {
                 studentsByProgram.add(student);
             }
         }
