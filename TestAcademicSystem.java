@@ -51,7 +51,7 @@ public class TestAcademicSystem {
         Module module = new Module("M101", "Mathematics", 5, 0, null);
         course.addModule(module);
         course.removeModule(module);
-        assertEquals(0, course.getModules().size());
+        assertEquals(0, ((Object) course.getModules()).size());
         assertFalse(course);
     }
 
