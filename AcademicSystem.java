@@ -31,4 +31,12 @@ public class AcademicSystem {
     public boolean checkForRepeatModules(Student student) {
         return false;
     }
+
+    public List<Student> getStudentsByProgram(Course course1) {
+        return null;
+    }
+
+    public String calculateOverallAverageQCA() {
+        return null;
+    }
 }

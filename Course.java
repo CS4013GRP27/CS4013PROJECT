@@ -108,6 +108,9 @@ public class Course {
                 ", modulesOffered=" + modulesOffered +
                 '}';
     }
+
+    public void addModule(Module module1) {
+    }
 }
 
 enum ProgramType {

@@ -86,4 +86,8 @@ public class Student {
     public Transcript getTranscript() {
         return null;
     }
+
+    public double calculateQCA() {
+        return 0;
+    }
 }

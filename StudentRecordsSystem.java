@@ -1,22 +1,24 @@
+import java.util.List;
+
 public class StudentRecordsSystem {
 
     public static void main(String[] args) {
         // Create Modules
-        Module module1 = new Module("M101", "Mathematics", 5);
-        Module module2 = new Module("P201", "Physics", 4);
-        Module module3 = new Module("C907", "English", 4);
-        Module module4 = new Module("C123", "Irish", 4);
-        Module module5 = new Module("C145", "Biology", 4);
+        Module module1 = new Module("M101", "Mathematics", 5, 0, null);
+        Module module2 = new Module("P201", "Physics", 4, 0, null);
+        Module module3 = new Module("C907", "English", 4, 0, null);
+        Module module4 = new Module("C123", "Irish", 4, 0, null);
+        Module module5 = new Module("C145", "Biology", 4, 0, null);
 
         // Create Programs
-        Course course1 = new Course("LM121", "Bachelor of Science in Computer Science", "Engineering Dept", "Undergraduate", 4);
+        Course course1 = new Course("LM121", "Bachelor of Science in Computer Science", "Engineering Dept", "Undergraduate", 4, null, null);
         course1.addModule(module1);
         course1.addModule(module2);
         course1.addModule(module3);
         course1.addModule(module4);
         course1.addModule(module5);
 
-        Course course2 = new Course("LM122", "Bachelor of Arts in History", "Humanities Dept", "Undergraduate", 4);
+        Course course2 = new Course("LM122", "Bachelor of Arts in History", "Humanities Dept", "Undergraduate", 4, null, null);
         course2.addModule(module1);
         course2.addModule(module2);
         course2.addModule(module3);
