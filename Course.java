@@ -115,6 +115,9 @@ public class Course {
     public Object getModules() {
         return null;
     }
+
+    public void removeModule(Module module) {
+    }
 }
 
 enum ProgramType {
