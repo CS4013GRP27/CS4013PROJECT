@@ -71,7 +71,7 @@ public class Student {
         return course;
     }
 
-    public void setCourse(Program course) {
+    public void setCourse(Course course) {
         this.course = course;
     }
 
@@ -81,5 +81,9 @@ public class Student {
 
     public void setModules(List<ModuleGrade> modules) {
         this.modules = modules;
+    }
+
+    public Transcript getTranscript() {
+        return null;
     }
 }

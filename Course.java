@@ -27,7 +27,7 @@ public class Course {
         this.modulesOffered.add(new ModuleGrade(module, grade));
     }
 
-    public double calculateProgramQCA(ResultsCalculator calculator) {
+    public double calculateProgramQCA(ResultCalculator calculator) {
         return calculator.calculateQcaOneSemester(modulesOffered);
     }
 

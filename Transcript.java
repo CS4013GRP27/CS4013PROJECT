@@ -47,4 +47,8 @@ public class Transcript {
     public void setModuleGrades(Map<Module, String> moduleGrades) {
         this.moduleGrades = moduleGrades;
     }
+
+    public double calculateQCA() {
+        return 0;
+    }
 }
