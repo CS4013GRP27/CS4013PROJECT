@@ -111,6 +111,10 @@ public class Course {
 
     public void addModule(Module module1) {
     }
+
+    public Object getModules() {
+        return null;
+    }
 }
 
 enum ProgramType {
