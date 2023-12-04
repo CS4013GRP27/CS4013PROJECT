@@ -1,3 +1,16 @@
+/**
+ * The ResultCalculator class provides methods to calculate QCA, determine progression, and evaluate grades for students.
+ * It offers functionality to calculate QCA for semesters and overall, evaluate grades, and check for progression requirements.
+ * 
+ * <p>Usage:
+ * <ol>
+ *    <li>Create an instance of the ResultCalculator class.</li>
+ *    <li>Invoke the appropriate method(s) to calculate QCA, check progression, or evaluate grades.</li>
+ * </ol>
+ * 
+ * <p>Note: Ensure module grades are provided correctly to obtain accurate calculations.
+ * /
+
 import java.util.List;
 
 public class ResultCalculator {
