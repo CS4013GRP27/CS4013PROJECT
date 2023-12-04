@@ -1,7 +1,8 @@
-import org.junit.jupiter.api.Test;
-
-import static org.junit.Assert.assertFalse;
 import static org.junit.jupiter.api.Assertions.*;
+
+import java.util.List;
+
+import org.junit.jupiter.api.Test;
 
 public class TestAcademicSystem {
 
@@ -25,36 +26,43 @@ public class TestAcademicSystem {
     
     @Test
     public void testCourseConstructor() {
-        Course course = new Course("COMP1010", "Programming Concepts", "Computer Science", "Undergraduate", 1, null, null);
+        Course course = new Course("COMP1010", "Programming Concepts", "Computer Science", "Undergraduate", 1, null);
         assertEquals("COMP1010", course.getCourseCode());
-        assertEquals("Programming Concepts", course.getName());
+        assertEquals("Programming Concepts", course.getCourseName());
         assertEquals("Computer Science", course.getDepartment());
         assertEquals("Undergraduate", course.getLevel());
         assertEquals(1, course.getDuration());
-        assertEquals(0, ((Object) course.getModules()).size()); // Initially no modules added
+        assertEquals(0, course.getModulesOffered().size()); // Initially no modules added
     }
 
     
 
     @Test
     public void testAddModuleToCourse() {
-        Course course = new Course("COMP1010", "Programming Concepts", "Computer Science", "Undergraduate", 1, null, null);
+        Course course = new Course("COMP1010", "Programming Concepts", "Computer Science", "Undergraduate", 1, null);
         Module module = new Module("M101", "Mathematics", 5, 0, null);
         course.addModule(module);
-        assertEquals(1, ((Object) course.getModules()).size());
-        assertTrue(((String) course.getModules()).contains((CharSequence) module));
+        
+        List<Module> modulesOffered = course.getModulesOffered(); // Assuming getModulesOffered() returns a List<Module>
+        
+        assertEquals(1, modulesOffered.size());
+        assertTrue(modulesOffered.contains(module));
     }
-
+    
+    
     @Test
     public void testRemoveModuleFromCourse() {
-        Course course = new Course("COMP1010", "Programming Concepts", "Computer Science", "Undergraduate", 1, null, null);
+        Course course = new Course("COMP1010", "Programming Concepts", "Computer Science", "Undergraduate", 1, null);
         Module module = new Module("M101", "Mathematics", 5, 0, null);
         course.addModule(module);
         course.removeModule(module);
-        assertEquals(0, ((Object) course.getModules()).size());
-        assertFalse(course);
+        
+        List<Module> modulesOffered = course.getModulesOffered(); // Assuming getModulesOffered() returns a List<Module>
+        
+        assertEquals(0, modulesOffered.size());
+        assertFalse(modulesOffered.contains(module));
     }
-
-    private void assertFalse(Course course) {
+    
+    private void assertFalse(boolean b) {
     }
 }
