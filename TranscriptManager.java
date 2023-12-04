@@ -1,7 +1,5 @@
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.io.*;
+import java.util.*;
 
 public class TranscriptManager {
     private Map<Student, Transcript> transcriptMap;
@@ -46,5 +44,17 @@ public class TranscriptManager {
 
     public void setTranscriptMap(Map<Student, Transcript> transcriptMap) {
         this.transcriptMap = transcriptMap;
+    }
+    
+    public void writeTranscriptsToCSV(String csvFile) {
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter(csvFile))) {
+            for (Transcript transcript : transcriptMap.values()) {
+                bw.write("Student ID: " + transcript.getStudent().getStudentId());
+                bw.newLine();
+                transcript.writeToCSV(csvFile);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
