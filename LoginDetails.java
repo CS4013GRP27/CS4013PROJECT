@@ -10,33 +10,59 @@ import java.util.HashMap;
 
 public class LoginDetails {
     private HashMap<Integer, String> studentPasswords = new HashMap<>();
+    private HashMap<Integer, String> facultyPasswords = new HashMap<>();
+    private HashMap<Integer, String> departmentPasswords = new HashMap<>();
+
     private HashMap<Integer, Student> students = new HashMap<>();
+    private HashMap<Integer, Faculty> faculties = new HashMap<>();
+    private HashMap<Integer, Department> departments = new HashMap<>();
 
     public LoginDetails() {
-        createStudentAccounts();
+        createDefaultAccounts();
     }
 
-   private void createStudentAccounts() {
-        // Create student accounts
+    private void createDefaultAccounts() {
+        // Create default student accounts
         Course course1 = new Course("LM121", "Bachelor of Science in Computer Science", "Engineering Dept", "Undergraduate", 4, CourseType.UNDERGRADUATE);
         Student student1 = new Student(1, "StudentName1", "student1@example.com", "Address1", course1);
-        // Add module grades to the student
         Module module1 = new Module("M101", "Mathematics", 5, 0, null);
         student1.addModuleGrade(module1, "A");
-        
-        students.put(1, student1); // Associate student ID with Student instance
+        students.put(1, student1);
+        studentPasswords.put(1, "StudentPassword1");
 
-        // Set default passwords (based on IDs for demonstration purposes)
-        studentPasswords.put(1, "StudentName1"); // Example student password
-        // Add more passwords similarly
+        // Create default faculty accounts
+        Department department2 = new Department("DeptName2");
+        Faculty faculty1 = new Faculty(101, "FacultyName1", department2);
+        faculties.put(101, faculty1);
+        facultyPasswords.put(101, "FacultyPassword1");
+
+        // Create default department accounts
+        Department department1 = new Department("DeptName1");
+        departments.put(201, department1);
+        departmentPasswords.put(201, "DepartmentPassword1");
     }
 
-
-    public HashMap<Integer, String> getStudentPasswords() {
-        return studentPasswords;
+    public String loginUser(int id, String password) {
+        if (studentPasswords.containsKey(id) && studentPasswords.get(id).equals(password)) {
+            return "student";
+        } else if (facultyPasswords.containsKey(id) && facultyPasswords.get(id).equals(password)) {
+            return "faculty";
+        } else if (departmentPasswords.containsKey(id) && departmentPasswords.get(id).equals(password)) {
+            return "department";
+        } else {
+            return "invalid";
+        }
     }
 
     public HashMap<Integer, Student> getStudents() {
         return students;
+    }
+
+    public HashMap<Integer, Faculty> getFaculties() {
+        return faculties;
+    }
+
+    public HashMap<Integer, Department> getDepartments() {
+        return departments;
     }
 }
