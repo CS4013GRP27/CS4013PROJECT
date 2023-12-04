@@ -1,5 +1,6 @@
-import java.util.HashMap;
-import java.util.Map;
+import java.io.*;
+import java.util.*;
+
 
 public class Transcript {
 
@@ -13,8 +14,6 @@ public class Transcript {
 
     public void generateTranscript() {
         System.out.println("Generating Transcript for Student: " + student.getName());
-        // Logic to generate transcript based on moduleGrades
-        // For example:
         System.out.println("Transcript Details:");
         for (Map.Entry<Module, String> entry : moduleGrades.entrySet()) {
             System.out.println(entry.getKey().getTitle() + " - Grade: " + entry.getValue());
@@ -49,6 +48,44 @@ public class Transcript {
     }
 
     public double calculateQCA() {
-        return 0;
+        ResultCalculator resultCalculator = new ResultCalculator();
+        List<ModuleGrade> moduleGradesList = new ArrayList<>();
+
+        // Convert the stored module grades to ModuleGrade objects
+        for (Map.Entry<Module, String> entry : moduleGrades.entrySet()) {
+            ModuleGrade moduleGrade = new ModuleGrade(entry.getKey(), entry.getValue());
+            moduleGradesList.add(moduleGrade);
+        }
+
+        return resultCalculator.calculateQcaOneSemester(moduleGradesList);
+    }
+    
+    public void writeToCSV(String csvFile) {
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter(csvFile))) {
+            for (Map.Entry<Module, String> entry : moduleGrades.entrySet()) {
+                String csvRecord = entry.getKey().getModuleCode() + "," +
+                        entry.getKey().getTitle() + "," +
+                        entry.getKey().getCredits() + "," +
+                        entry.getValue();
+                bw.write(csvRecord);
+                bw.newLine();
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    public void readFromCSV(String csvFile) {
+        try (BufferedReader br = new BufferedReader(new FileReader(csvFile))) {
+            String line;
+            while ((line = br.readLine()) != null) {
+                String[] data = line.split(",");
+                if (data.length == 4) {
+                    Module module = new Module(data[0], data[1], Integer.parseInt(data[2]), 0, null);
+                    moduleGrades.put(module, data[3]);
+                }
+            }
+        } catch (IOException | NumberFormatException e) {
+            e.printStackTrace();
+        }
     }
 }
