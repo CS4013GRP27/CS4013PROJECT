@@ -1,11 +1,11 @@
-             Number,Course name,Course ID,         Semesters
-1, computer Systems,CS839,8
-2, Software Engineering,SE562,8
-3, Data Science,DS293,8
-4,Mechanical Engineering,ME018,8
-5,Cybersecurity,CB483,8
-6,Biotechnology,BT829,8
-7,Aerospace Engineering,AE026,8
-8,Law,LW236,8
-9,Environmental science,ES927,8
-10,Arts,BSC009,8
+Course code,Course name,Department,Level,            Duration
+CS839, computer Systems,Science and Engineering,Undergraduate,4
+SE562, Software Engineering,Science and Engineering,Undergraduate,4
+DS293, Data Science,Science and Engineering,Undergraduate,4
+ME018,Mechanical Engineering,Science and Engineering,Undergraduate,4
+CB483,Cybersecurity,Science and Engineering,Undergraduate,4
+BT829,Biotechnology,Science and Engineering,Undergraduate,4
+AE026,Aerospace Engineering,Science and Engineering,Undergraduate,4
+LW236,Law,Law,Undergraduate,4
+ES927,Environmental science,Science and Engineering,Postgraduate,1
+BSC009,Arts,Arts,Undergraduate,4
