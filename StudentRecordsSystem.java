@@ -10,7 +10,7 @@ public class StudentRecordsSystem {
         Module module4 = new Module("C123", "Irish", 4, 0, null);
         Module module5 = new Module("C145", "Biology", 4, 0, null);
 
-        // Create Programs
+        // Create Programs      
         Course course1 = new Course("LM121", "Bachelor of Science in Computer Science", "Engineering Dept", "Undergraduate", 4, null);
         course1.addModule(module1);
         course1.addModule(module2);
