@@ -1,3 +1,17 @@
+/**
+ * The AcademicSystem class manages the academic structure, including departments and enrolled students.
+ * It provides functionalities to add departments, courses, and students, as well as methods for data retrieval.
+ * 
+ * <p>Usage:
+ * <ol>
+ *    <li>Instantiate the AcademicSystem class to create an academic system.</li>
+ *    <li>Add departments, courses, and students using appropriate methods.</li>
+ *    <li>Retrieve student information or perform calculations based on the academic structure.</li>
+ * </ol>
+ * 
+ * <p>Note: Ensure proper addition of students and departments to maintain the integrity of the academic system.
+ * /
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
