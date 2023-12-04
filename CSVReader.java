@@ -1,3 +1,17 @@
+/**
+ * The CSVReader class handles the parsing of CSV files to retrieve and process student, course, and module data.
+ * It provides methods to read and interpret CSV data, creating corresponding objects like Students, Courses, and Modules.
+ * 
+ * <p>Usage:
+ * <ol>
+ *    <li>Instantiate the CSVReader class.</li>
+ *    <li>Invoke methods to read student, course, or module data from CSV files.</li>
+ *    <li>Utilize the obtained data in the application as required.</li>
+ * </ol>
+ * 
+ * <p>Note: Ensure correct CSV file paths and delimiters are specified before usage.
+ * /
+
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
