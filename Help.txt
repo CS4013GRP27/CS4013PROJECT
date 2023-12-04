@@ -1,0 +1,12 @@
+Help File
+Group 27
+Daragh Roche 22350985
+Abdelrahman Founas 22359753
+Alex Sidorov 22349073
+Mohamed Islam 21304599
+
+Java JDK 17.0 or Later Installed
+Junit Compatible Software
+
+Open a ide and change csv locations to wherever is necessary.
+Run the test code as well as the the csv Reader.
