@@ -1,3 +1,17 @@
+/**
+ * The Student class represents a student within the academic system, holding student-specific information.
+ * It stores details such as the student's ID, name, email, address, enrolled course, and module grades.
+ * 
+ * <p>Usage:
+ * <ol>
+ *    <li>Create instances of the Student class for each student.</li>
+ *    <li>Add modules and corresponding grades using appropriate methods.</li>
+ *    <li>Access and modify student details as required.</li>
+ * </ol>
+ * 
+ * <p>Note: Ensure proper handling of module grades and correct association with modules.
+ * /
+
 import java.util.ArrayList;
 import java.util.List;
 
