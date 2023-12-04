@@ -2,10 +2,10 @@ public class Module {
     private String moduleCode;
     private String title;
     private int credits;
-    private int level;
+    private String level;
     private String department;
 
-    public Module(String moduleCode, String title, int credits, int level, String department) {
+    public Module(String moduleCode, String title, int credits, String level, String department) {
         this.moduleCode = moduleCode;
         this.title = title;
         this.credits = credits;
@@ -37,11 +37,11 @@ public class Module {
         this.credits = credits;
     }
 
-    public int getLevel() {
+    public String getLevel() {
         return level;
     }
 
-    public void setLevel(int level) {
+    public void setLevel(String level) {
         this.level = level;
     }
 
