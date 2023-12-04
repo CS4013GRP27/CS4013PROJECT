@@ -6,10 +6,13 @@ import java.util.Map;
 public class AcademicSystem {
     private Map<Integer, Transcript> studentTranscripts;
     private List<Department> departments;
+    private List<Student> students;
 
     public AcademicSystem() {
         this.studentTranscripts = new HashMap<>();
         this.departments = new ArrayList<>();
+        this.departments = new ArrayList<>();
+        this.students = new ArrayList<>();
     }
 
     public void addDepartment(Department department) {
@@ -17,13 +20,28 @@ public class AcademicSystem {
     }
 
     public void addStudent(Student student) {
-        Transcript transcript = new Transcript(student);
-        studentTranscripts.put(student.getStudentId(), transcript);
+        students.add(student);
     }
 
-    public double calculateOverallAverageQCA(Student student) {
-        Transcript transcript = studentTranscripts.get(student.getStudentId());
-        return transcript.calculateQCA();
+    public List<Student> getStudents() {
+        return students;
+    }
+    
+    public double calculateOverallAverageQCA(List<Student> students) {
+        ResultCalculator resultCalculator = new ResultCalculator();
+        double totalQCA = 0.0;
+        int totalStudents = students.size();
+
+        for (Student student : students) {
+            double studentQCA = resultCalculator.calculateQcaOneSemester(student.getModules());
+            totalQCA += studentQCA;
+        }
+
+        if (totalStudents == 0) {
+            return 0.0;
+        }
+
+        return totalQCA / totalStudents;
     }
 
     public boolean checkStudentProgression(Student student) {
@@ -58,13 +76,33 @@ public class AcademicSystem {
     }
 
     public List<Student> getStudentsByCourse(Course course) {
-        List<Student> students = new ArrayList<>();
-        // Logic to retrieve students by course
-        return students;
+        List<Student> studentsInCourse = new ArrayList<>();
+
+        for (Student student : students) {
+            if (student.getCourse().equals(course)) {
+                studentsInCourse.add(student);
+            }
+        }
+
+        return studentsInCourse;
     }
 
-    public String calculateOverallAverageQCA() {
-        // Logic to calculate overall average QCA for all students
-        return null;
+    public double calculateOverallAverageQCA(Map<Integer, Student> students) {
+    	ResultCalculator resultCalculator = new ResultCalculator();
+    	double totalQCA = 0.0;
+        int totalStudents = 0;
+
+        for (Student student : students.values()) {
+            double studentQCA =resultCalculator.calculateQcaOneSemester(student.getModules());
+            totalQCA += studentQCA;
+            totalStudents++;
+        }
+
+        if (totalStudents == 0) {
+            return 0.0; 
+        }
+
+        return totalQCA / totalStudents;
     }
+
 }
