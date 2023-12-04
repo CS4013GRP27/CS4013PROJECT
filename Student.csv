@@ -1,11 +1,11 @@
-,Name,         Student ID,Email,Course,Address
-1,Abdelrahman Founas,22359753,22359753@studentmail.ie, Computer Science,16 oak lane
-2,Johan Islam,22478292,22478292@studentmail.ie, Biotechnology,92 chicken avenue
-3,Seanie Stack,24785993,24785993@studentmail.ie, Law,34 potatoe road
-4,Ruhul Alaf,21920938,21920938@studentmail.ie,Mechanical Engineering,22 ash drive
-5,Cristiano Ronaldo,24912093,24912093@studentmail.ie,Data Science,11 avignon
-6,Pele,21346509,21346509@studentmail.ie,Civil Engineering,15 daragh oaks
-7,Daragh Roche,29454781,29454781@studentmail.ie,Computer Engineering,12 milford grange
-8,Alex Sidorov,23542987,23542987@studentmail.ie,Aerospace Engineering,14 anacotty drive
-9,Margot Robbie,27194601,27194601@studentmail.ie,Cybersecurity,17 kilteragh
-10,Thierry Henry,21245672,21245672@studentmail.ie,Environmental science,13 avignon
+         Student ID,Name,Email,Address,Course
+22359753,Abdelrahman Founas,22359753@studentmail.ie,16 oak lane, Computer Science
+22478292,Johan Islam,22478292@studentmail.ie,92 chicken avenue, Biotechnology
+24785993,Seanie Stack,24785993@studentmail.ie,34 potatoe road, Law
+21920938,Ruhul Alaf,21920938@studentmail.ie,22 ash drive,Mechanical Engineering
+24912093,Cristiano Ronaldo,24912093@studentmail.ie,11 avignon,Data Science
+21346509,Pele,21346509@studentmail.ie,15 daragh oaks,Civil Engineering
+29454781,Daragh Roche,29454781@studentmail.ie,12 milford grange,Computer Engineering
+23542987,Alex Sidorov,23542987@studentmail.ie,14 anacotty drive,Aerospace Engineering
+27194601,Margot Robbie,27194601@studentmail.ie,17 kilteragh,Cybersecurity
+21245672,Thierry Henry,21245672@studentmail.ie,13 avignon,Environmental science
