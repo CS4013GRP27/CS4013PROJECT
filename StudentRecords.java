@@ -3,9 +3,11 @@ import java.util.List;
 
 public class StudentRecords {
     private List<Student> studentList;
+    private ResultCalculator resultCalculator;
 
     public StudentRecords() {
         this.studentList = new ArrayList<>();
+        this.resultCalculator = new ResultCalculator();
     }
 
     public void addStudent(Student student) {
@@ -43,11 +45,11 @@ public class StudentRecords {
         this.studentList = students;
     }
 
-    public double calculateOverallAverageGPA() {
-        double totalGpa = 0.0;
+    public double calculateOverallAverageQCA() {
+        double totalQCA = 0.0;
         for (Student student : studentList) {
-            totalGpa += student.calculateQCA();
+            totalQCA += resultCalculator.calculateQcaOneSemester(student.getModules());
         }
-        return totalGpa / studentList.size();
+        return totalQCA / studentList.size();
     }
 }
