@@ -1,12 +1,5 @@
 import java.util.HashMap;
-/*To do
- * instance have  to be made in main method
- * Make a default account for each id student and faculty
- * link these accounts with grades qca etc.
- * design the gui
- * set default password as Password or their birthday etc.
- * 
- */
+
 
 public class LoginDetails {
     private HashMap<Integer, String> studentPasswords = new HashMap<>();
@@ -25,7 +18,7 @@ public class LoginDetails {
         // Create default student accounts
         Course course1 = new Course("LM121", "Bachelor of Science in Computer Science", "Engineering Dept", "Undergraduate", 4, CourseType.UNDERGRADUATE);
         Student student1 = new Student(1, "StudentName1", "student1@example.com", "Address1", course1);
-        Module module1 = new Module("M101", "Mathematics", 5, 0, null);
+        Module module1 = new Module("M101", "Mathematics", 5, "Undergraduate", null);
         student1.addModuleGrade(module1, "A");
         students.put(1, student1);
         studentPasswords.put(1, "StudentPassword1");
