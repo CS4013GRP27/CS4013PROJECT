@@ -23,6 +23,16 @@ public class Course {
         this.moduleGrades = new ArrayList<>();
         this.enrolledStudents = new ArrayList<>();
     }
+    public Course(String courseCode, String name, String department, String level, int duration) {
+        this.courseCode = courseCode;
+        this.name = name;
+        this.department = department;
+        this.level = level;
+        this.duration = duration;
+        this.modulesOffered = new ArrayList<>();
+        this.moduleGrades = new ArrayList<>();
+        this.enrolledStudents = new ArrayList<>();
+    }
 
     public void addModuleGrade(Module module, String grade, int creditValue) {
         ModuleGrade moduleGrade = new ModuleGrade(module, grade, creditValue);
