@@ -3,34 +3,34 @@ import java.util.List;
 public class StudentRecordsSystem {
 
     public static void main(String[] args) {
-        // Creating the modules 
+        // Create Modules
         Module module1 = new Module("M101", "Mathematics", 5, 0, null);
         Module module2 = new Module("P201", "Physics", 4, 0, null);
         Module module3 = new Module("C907", "English", 4, 0, null);
         Module module4 = new Module("C123", "Irish", 4, 0, null);
         Module module5 = new Module("C145", "Biology", 4, 0, null);
 
-        // Creating the programs 
-        Course course1 = new Course("LM121", "Bachelor of Science in Computer Science", "Engineering Dept", "Undergraduate", 4, null, null);
+        // Create Programs
+        Course course1 = new Course("LM121", "Bachelor of Science in Computer Science", "Engineering Dept", "Undergraduate", 4, null);
         course1.addModule(module1);
         course1.addModule(module2);
         course1.addModule(module3);
         course1.addModule(module4);
         course1.addModule(module5);
 
-        Course course2 = new Course("LM122", "Bachelor of Arts in History", "Humanities Dept", "Undergraduate", 4, null, null);
+        Course course2 = new Course("LM122", "Bachelor of Arts in History", "Humanities Dept", "Undergraduate", 4, null);
         course2.addModule(module1);
         course2.addModule(module2);
         course2.addModule(module3);
         course2.addModule(module4);
         course2.addModule(module5);
 
-        // Creating the department 
+        // Create Department
         Department engineeringDept = new Department("Engineering Department");
         engineeringDept.addCourse(course1);
         engineeringDept.addCourse(course2);
 
-        // Creating the students 
+        // Create Students
         Student student1 = new Student(1001, "Billy Leenane", "123@gmail.com", "123 Town street", course1);
         student1.addModuleGrade(module1, "A1");
         student1.addModuleGrade(module2, "B2");
@@ -52,16 +52,16 @@ public class StudentRecordsSystem {
         student3.addModuleGrade(module4, "A1");
         student3.addModuleGrade(module5, "B2");
 
-        // Creating academic system 
+        // Create Academic System
         AcademicSystem academicSystem = new AcademicSystem();
         academicSystem.addDepartment(engineeringDept);
         academicSystem.addStudent(student1);
         academicSystem.addStudent(student2);
         academicSystem.addStudent(student3);
 
-        // Example of the operations
+        // Example operations
         System.out.println("Students in Physics Department:");
-        List<Student> physicsStudents = academicSystem.getStudentsByProgram(course1);
+        List<Student> physicsStudents = academicSystem.getStudentsByCourse(course1);
         for (Student student : physicsStudents) {
             System.out.println(student.getName());
         }
